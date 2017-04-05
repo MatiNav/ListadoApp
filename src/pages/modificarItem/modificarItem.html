@@ -1,0 +1,39 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            Modificar Item
+        </ion-title>
+        <ion-buttons start>
+            <button ion-button (click)="cancelar()">
+        <span ion-text color="primary" showWhen="ios">Cancel</span>
+        <ion-icon name="md-close" showWhen="android"></ion-icon>
+        </button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form (ngSubmit)="hacerElDismiss()" #elForm="ngForm">
+        <ion-item>
+            <ion-label floating>Nombre</ion-label>            
+            <ion-input name="nameForm" type="text" [(ngModel)]="newItemForm.name"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Url Imagen</ion-label>
+            <ion-input type="text" name="nameUrl" [(ngModel)]="newItemForm.url"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Descripcion</ion-label>
+            <ion-input type="text" name="nameDesc" [(ngModel)]="newItemForm.description"></ion-input>
+        </ion-item>
+
+        <button ion-button type="submit" color="primary" [disabled]="!elForm.valid" block>]Modificar</button>
+
+    </form>
+
+</ion-content>
+
+<ion-footer>
+
+</ion-footer>
